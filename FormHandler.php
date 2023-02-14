@@ -35,7 +35,20 @@
 	echo "<p>&nbsp;</p>";
 	$msg = "First Line of text\nSecond line of text";
 	$msg = wordwrap($msg,70);
-	mail("higginsglobalinvestments@gmail.com", "My subject",$msg);
+	
+	if (isset($_POST["submit"])){
+		$name = $_POST["name"];
+		$email = $_POST["email_address"];
+		$subject = $_POST["subject"];
+		$message = $_POST["message"];
+
+		$mailTo = "higginsglobalinvestments@gmail.com";
+		$headers = "From: ".$mailFrom;
+		$txt = "You have received an e-mail from ".$name.".\n\n".$message;
+
+		mail($mailTo, $subject, $txt, $header);
+		header("Location: FormHandler.php?mailsend");
+	}
 ?>
 
 </body>

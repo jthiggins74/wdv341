@@ -25,6 +25,7 @@
 </head>
 
 <body>
+  <main>
 <h1>WDV341- Jeff's Unit 5 Homework </h1>
 <h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
 <p>Welcome to the Student Registry Page.</p>
@@ -44,35 +45,27 @@
   <legend>Please enter your information and click the "Submit" button</legend>
   
   <p>
-  	<label for="first_name">First Name:</label> 
-    <input type="text" name="first_name" id="first_name" />
+  	<label for="name">Full Name:</label> 
+    <input type="text" name="name" id="name" />
   </p>
-  
-  <p>
-  	<label for="last_name">Last Name:</label> 
-    <input type="text" name="last_name" id="last_name" />
-  </p>
-  
-  <p>
   	<label for="email_address">Email Address:</label> 
     <input type="email" name="email_address" id="email_address" />
+    <p>
+    <label for="subject">Subject:</label>
+    <input type="subject" name="subject" id="email address"/></p>
   </p>
 
 
   <form action="/html/tags/html_form_tag_action.cfm" method="post">
     <div>
     <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
-      Comments are optional
+      Enter comments here
     </textarea>
     </div>
     <input type="submit" value="Submit">
     </form>
 
-  
-  
-</form>
-
-<p>&nbsp;</p>
-</body>
-
+  <p>&nbsp;</p>
+    </main>
+  </body>
 </html>
