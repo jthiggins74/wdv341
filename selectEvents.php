@@ -32,18 +32,22 @@ $stmt->execute();     //the $stmt will CATCH the returned result-set object
 //6. process the result set/object
 $stmt->setFetchMode(PDO::FETCH_ASSOC);  //set the result as an associate array
 
+/*
 $row = $stmt->fetch();
 echo $row['name'];
 echo $row['description'];
+*/
 
-// while($row = $stmt->fetch())
+/*
+while($row = $stmt->fetch()){
     echo "<br>";
     echo $row['name'];
     echo $row['description'];
     echo $row['presenter'];
+}   
+*/
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,9 +68,27 @@ echo $row['description'];
         <h1>WDV341 Intro to PHP</h1>
         <h2>SELECT Example</h2>
         <div>
-            <div>
+
+            <div class='courseCard'>
                 <h2>WDV221 Intro Javascript</h2>
+                <p>This course discusses the Javascript programming language</p>
                 <p>Instructor: Matt Hall</p>
             </div>
+    <?php
+              
+        while($row=$stmt->fetch()){
+            //echo $row["name"]; 
+        
+    ?>
+        <div class='courseCard'>
+                <h2><?php echo $row['name']; ?></h2>
+                <p><?php echo $row['description']; ?></p>
+                <p>Instructor: <?php echo $row['presenter']; ?></p>
+            </div>
+    <?php 
+        }
+    ?>
+
+        </div>
     </body>
 </html>
