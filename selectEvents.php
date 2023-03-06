@@ -1,4 +1,5 @@
 <?php 
+
 //database work flow
 //1. connect to the database, we are using our dbConnect.php
 //2. create sql command
@@ -14,17 +15,17 @@ require 'dbconnect.php';
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //2. create SQL command
-$sql = "SELECT name, description, presenter FROM webdev341_events WHERE presenter= :presenterName";
+$sql = "SELECT name, description, presenter FROM webdev341_events";
 
 //3. prepare your statements/statement object
 $stmt = $conn->prepare($sql);  //prepare the SQL statement into the statement object
 
 //4. bind paraments
-$recordID = 3;
+//$recordID = 2;
 //$stmt->bindParam(':recordID',$recordId);
 //$stmt->bindParam(':recordId',$recordId); //1:29 lesson recording 7
-$presenter = "Jeff Gullion";
-$stmt->bindParam(':presenterName',$presenter);
+//$presenter = "Karen Murphy ";
+//$stmt->bindParam(':presenterName',$presenter);
 
 //5. execute statements
 $stmt->execute();     //the $stmt will CATCH the returned result-set object
